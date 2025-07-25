@@ -16,9 +16,7 @@
         // 3 - Raise the event when the video is encoded (Need a method that is responsible for that!)
         //      Signature suggestion: protected virtual void On...
 
-        public delegate void VideoEncodedEventHandler(object source, VideoEventArgs args);
-
-        public event VideoEncodedEventHandler? VideoEncoded;
+        public event EventHandler<VideoEventArgs> VideoEncoded; // 2 - Define an event based on the delegate not splicit
         public void Encode(Video video)
         {
             Console.WriteLine($"Encoding video: {video.Title}...");
